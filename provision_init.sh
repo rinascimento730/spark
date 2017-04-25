@@ -22,3 +22,7 @@ SPARK_HOME="/opt/spark"
 } | sudo tee -a /etc/profile.d/spark.sh
 
 source /etc/profile
+
+# set spark Log Level
+cp /opt/spark/conf/log4j.properties.template /opt/spark/conf/log4j.properties
+sed -i -e "s/rootCategory=INFO/rootCategory=WARN/g" /opt/spark/conf/log4j.properties
