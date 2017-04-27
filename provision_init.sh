@@ -1,4 +1,8 @@
 #!/bin/bash
+# relink mount setting
+# @see https://www.virtualbox.org/ticket/16670
+#sudo rm /sbin/mount.vboxsf
+#sudo ln -s /usr/lib/VBoxGuestAdditions/mount.vboxsf /sbin/mount.vboxsf
 
 # yum upgrade
 sudo yum -y upgrade
