@@ -1,1 +1,3 @@
 /.vagrant/*
+/sandbox/metastore_db/*
+/sandbox/derby.log

@@ -22,6 +22,16 @@ print words.take(words.count())
 
 a = sc.parallelize([1, 2, 3, 4, 3, 4])
 b = sc.parallelize([5, 6, 7, 8])
-print a.distinct()
+c = a.distinct()
+print c.first()
+print c.take(c.count())
+d = a.union(b)
+print d.take(d.count())
+
+e = a.cartesian(b)
+print e.take(e.count())
+
+f = a.reduce(lambda x, y: x + y)
+print f
 
 
