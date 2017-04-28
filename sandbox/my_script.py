@@ -5,5 +5,23 @@ sc = SparkContext(conf = conf)
 
 lines = sc.textFile("/opt/spark/README.md")
 pythonLines = lines.filter(lambda line: "Python" in line)
-print(pythonLines.first())
-print(pythonLines.count())
+print pythonLines.first()
+print pythonLines.count()
+print pythonLines.take(2)
+
+nums = sc.parallelize([1, 2, 3, 4])
+squared = nums.map(lambda x: x * x).collect()
+for num in squared:
+	print "%i " % (num)
+
+lines = sc.parallelize(["Hello world", "hi"])
+words = lines.flatMap(lambda line: line.split(" "))
+print words.first()
+print words.count()
+print words.take(words.count())
+
+a = sc.parallelize([1, 2, 3, 4, 3, 4])
+b = sc.parallelize([5, 6, 7, 8])
+print a.distinct()
+
+
