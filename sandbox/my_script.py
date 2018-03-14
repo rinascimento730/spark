@@ -34,4 +34,9 @@ print e.take(e.count())
 f = a.reduce(lambda x, y: x + y)
 print f
 
+def g(x):
+	print x
+
+a.foreach(g)
+
 
